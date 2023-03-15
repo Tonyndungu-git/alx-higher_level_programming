@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-weight_average = __import__('100-weight_average').weight_average
-
-my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
-result = weight_average(my_list)
-print("Average: {:0.2f}".format(result))
+def weight_average(my_list=[]):
+    if my_list == [] or my_list is None:
+        return 0
+    sum_t = total = 0
+    for (x, y) in my_list:
+        sum_t += (x * y)
+        total += y
+    return sum_t / total
