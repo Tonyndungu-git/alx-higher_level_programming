@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Prompt the user to enter the name of a Python file to compile (including the file extension).
+read -p ": " py_file
+
+# Check if the specified file exists.
+if [ -f "$py_file" ]; then
+  # Compile the script to bytecode and rename the output file.
+  python -m py_compile "$py_file" && mv "${py_file}c" "${py_file}.pyc"
+  echo "Successfully compiled ${py_file} to ${py_file}.pyc!"
+else
+  # If the file does not exist, print an error message.
+  echo "Error: ${py_file} does not exist!"
+  exit 1
+fi
