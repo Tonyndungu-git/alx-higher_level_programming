@@ -16,3 +16,6 @@ else:
     print(f"{num_args} arguments:")
     for i, arg in enumerate(args, start=1):
         print(f"{i}: {arg}")
+
+if __name__ == "__main__":
+    main()
