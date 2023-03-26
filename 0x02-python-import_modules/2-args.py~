@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+import sys
+
+# Get the command line arguments
+argv = sys.argv[1:]
+
+# Print the number of arguments
+num_args = len(argv)
+print(f"{num_args} arguments")
+
+# Print the list of arguments
+if num_args > 0:
+    print(":")
+    for i, arg in enumerate(argv, start=1):
+        print(f"{i}: {arg}")
