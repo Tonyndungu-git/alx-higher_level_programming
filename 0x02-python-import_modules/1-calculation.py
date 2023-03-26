@@ -1,14 +1,14 @@
 #!/usr/bin/python3
+from calculator_1 import add, sub, mul, div
 
-import calculator_1
+def main():
+    a = 10
+    b = 5
 
-a = 10
-b = 5
-
-print(f"{a} + {b} = {calculator_1.add(a, b)}")
-print(f"{a} - {b} = {calculator_1.sub(a, b)}")
-print(f"{a} * {b} = {calculator_1.mul(a, b)}")
-print(f"{a} / {b} = {calculator_1.div(a, b)}")
+    print(f"{a} + {b} = {add(a, b)}")
+    print(f"{a} - {b} = {sub(a, b)}")
+    print(f"{a} * {b} = {mul(a, b)}")
+    print(f"{a} / {b} = {div(a, b)}")
 
 if __name__ == "__main__":
     main()
