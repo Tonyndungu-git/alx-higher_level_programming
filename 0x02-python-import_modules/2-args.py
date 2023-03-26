@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-
 import sys
 
-# Get the command line arguments
-args = sys.argv[1:]
-num_args = len(args)
 
-# Print the number of arguments and the list of arguments
-if num_args == 0:
-    print("0 arguments.")
-elif num_args == 1:
-    print("1 argument:")
-    print(f"1: {args[0]}")
-else:
-    print(f"{num_args} arguments:")
-    for i, arg in enumerate(args, start=1):
-        print(f"{i}: {arg}")
+def main(*argv):
+    i = 0
+    num_args = len(sys.argv) - 1
+    if num_args == 1:
+        print("{:d} argument:".format(num_args))
+    elif num_args == 0:
+        print("{:d} arguments.".format(num_args))
+    else:
+        print("{:d} arguments:".format(num_args))
+    for args in sys.argv:
+        if (i != 0):
+            print("{}: {}".format(i, args))
+        i += 1
+
 
 if __name__ == "__main__":
     main()
