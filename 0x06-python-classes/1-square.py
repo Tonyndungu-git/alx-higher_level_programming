@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+''' Module Square '''
+
+
+class Square:
+    ''' defines a square by: (based on 0-square.py)'''
+    def __init__(self, size):
+        ''' initializes the object variables'''
+        self.__size = size
