@@ -6,6 +6,7 @@ class Rectangle:
     ''' class Rectangle'''
 
     count = 0
+
     def __init__(self, width=0, height=0):
         '''initialization of class Rectangle'''
         self.width = width
@@ -69,4 +70,4 @@ class Rectangle:
     def __del__(self):
         ''' deletes and prints out a string '''
         print("Bye rectangle...")
-        Rectangle.count -=1
+        Rectangle.count -= 1
