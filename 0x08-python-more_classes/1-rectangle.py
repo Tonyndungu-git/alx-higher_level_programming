@@ -8,12 +8,10 @@ class Rectangle:
         self.width = width
         self.height = height
 
-
         @property
         def width(self):
             '''width getter returns private width'''
             return self.__width
-
 
         @width.setter
         def width(self, value):
@@ -25,12 +23,10 @@ class Rectangle:
             else:
                 self.__width = width
 
-
         @property
         def height(self, value):
             '''height getter'''
             return self.__width
-
 
         @height.setter
         def height(self, value):
