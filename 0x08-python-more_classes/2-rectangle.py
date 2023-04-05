@@ -22,12 +22,12 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be greater than zero")
         else:
-            self.__width = width
+            self.__width = value
 
     @property
     def height(self, value):
         '''height getter'''
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -37,4 +37,14 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be greater than zero")
         else:
-            self.__height = height
+            self.__height = value
+
+    def area(self):
+        '''area of the rectangle'''
+        return self.__width * self.__height
+
+    def perimeter(self):
+        '''perimeter of the rectangle'''
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        return (2 * self.__height)+(2 * self.__width)
