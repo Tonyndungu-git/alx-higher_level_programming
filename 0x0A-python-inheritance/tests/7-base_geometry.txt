@@ -1,0 +1,10 @@
+# Test case 1: Test integer_validator with valid input
+width = BaseGeometry()
+width.integer_validator("width", 10)
+
+# Test case 2: Test integer_validator with non-integer input
+height = BaseGeometry()
+try:
+    height.integer_validator("height", "not an integer")
+except TypeError as e:
+    assert str(e) == "height must be an integer"
