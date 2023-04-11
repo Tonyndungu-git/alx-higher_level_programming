@@ -2,4 +2,5 @@
 
 
 def lookup(obj):
-    return dir(obj)
+    mylist = dir(obj)
+    return mylist
