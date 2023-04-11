@@ -1,0 +1,22 @@
+# Test case 1
+# Create a new MyList object with an initial list of integers
+# Print the original list
+[5, 2, 8, 1, 9]
+[1, 2, 5, 8, 9]
+
+# Test case 2
+# Create a new MyList object with an empty list
+[]
+[]
+
+# Test case 3
+# Create a new MyList object with a single integer
+# Print the original list
+[7]
+[7]
+
+# Test case 4
+# Create a new MyList object with a negative integer
+# Print the original list
+[4, -2, 6, 0, -5]
+[-5, -2, 0, 4, 6]
