@@ -3,6 +3,6 @@ import json
 ''' from_json_string function'''
 
 
-def from_json_string(my_str):
+def to_json_string(my_str):
     ''' changes string to json '''
     return json.dumps(my_str)
