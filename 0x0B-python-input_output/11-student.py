@@ -25,7 +25,6 @@ class Student():
                     new_dict[attr] = getattr(self, attr)
             return new_dict
 
-
     def reload_from_json(self, json):
         ''' that replaces all attributes of the Student instance '''
         for key, value in json.items():
