@@ -4,7 +4,7 @@ import json
 
 
 def class_to_json(obj):
-    ''' retuns python data structure from json''' 
+    ''' retuns python data structure from json'''
     json_dict = {}
     for key, value in obj.__dict__.items():
         if isinstance(value, (int, float, str, bool)):
