@@ -10,7 +10,19 @@ def class_to_json(obj):
         if isinstance(value, (int, float, str, bool)):
             json_dict[key] = value
         elif isinstance(value, list):
-            json_dict[key] = [class_to_json(item) if hasattr(item, '__dict__') else item for item in value]
+            json_list = []
+            for item in value:
+                if hasattr(item, '__dict__'):
+                    json_list.append(class_to_json(item))
+                else:
+                    json_list.append(item)
+                json_dict[key] = json_list
         elif isinstance(value, dict):
-            json_dict[key] = {k: class_to_json(v) if hasattr(v, '__dict__') else v for k, v in value.items()}
+            json_dict[key] = {}
+            for k, v in value.items():
+                if hasattr(v, '__dict__'):
+                    json_dict[key][k] = class_to_json(v)
+                else:
+                    json_dict[key][k] = v
+
     return json_dict
