@@ -1,17 +1,10 @@
 #!/usr/bin/python3
-'''
-Module Divide Matrix
-'''
+''' matrix_divided fuction'''
 
 
 def matrix_divided(matrix, div):
     '''
       Divides all elements of a matrix.
-      Args:
-          matrix (list of lists): Matrix to divide.
-          div (int or float): Divisor.
-      Returns:
-          list of lists: New matrix with all elements divided by div.
     '''
     if not all(isinstance(row, list) and all(isinstance(x, (int, float))
                                              for x in row) for row in matrix):
