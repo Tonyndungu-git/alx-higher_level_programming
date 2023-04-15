@@ -1,0 +1,22 @@
+This is a test file for the text_indentation function.
+Import text_indentation function
+       >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+       >>> text_indentation("Hello. How are you?")
+       Hello.
+       How are you?
+
+       >>> text_indentation("This is a test with a? question mark.")
+       This is a test with a?
+       question mark.
+
+       >>> text_indentation("Another: test with some colons.")
+       Another:
+       test with some colons.
+
+       >>> text_indentation("")
+
+       >>> text_indentation(123)
+       Traceback (most recent call last):
+       ...
+       TypeError: text must be a string
