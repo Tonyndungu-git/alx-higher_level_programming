@@ -5,7 +5,7 @@ import csv
 
 
 class Base:
-
+    ''' the base class of all the objects to be created '''
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -92,6 +92,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        ''' loads and reads a csv file '''
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, "r") as f:
