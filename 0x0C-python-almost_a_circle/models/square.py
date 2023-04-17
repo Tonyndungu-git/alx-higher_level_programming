@@ -1,35 +1,23 @@
 #!/usr/bin/python3
-"""
-This module contains the Square class
-"""
+'''This module contains the Square class'''
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """
-    A class named Square
-    """
-
+    '''A class named Square'''
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Initializes a Square instance
-        """
-
+        ''' Initializes a Square instance '''
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """
-        Returns a string representation of the object
-        """
+        ''' Returns a string representation of the object'''
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        """
-        getter method for size
-        """
+        ''' getter method for size '''
         return self.width
 
     @size.setter
