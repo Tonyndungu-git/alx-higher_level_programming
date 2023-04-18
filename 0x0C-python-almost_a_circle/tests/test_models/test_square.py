@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 ''' class TestSquare '''
 import unittest
-from models.square import Square
-
+import json
+from models import square
+from models.base import Base
+Square = square.Square
 
 class TestSquare(unittest.TestCase):
     '''unittest for the square class '''
