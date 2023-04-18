@@ -1,0 +1,73 @@
+#!/usr/bin/python3
+''' class TestRectangle '''
+import unittest
+import json
+from models import rectangle
+from models.base import Base
+Rectangle = rectangle.Rectangle
+
+class TestRectangle(unittest.TestCase):
+    ''' unittest for class rectangle '''
+    def setUp(self):
+        ''' test the setup of the class '''
+        self.rect = Rectangle(4, 5, 1, 2, 10)
+
+    def test_width(self):
+        ''' tests the width attr '''
+        self.assertEqual(self.rect.width, 4)
+        with self.assertRaises(TypeError):
+            self.rect.width = '4'
+        with self.assertRaises(ValueError):
+            self.rect.width = 0
+
+    def test_height(self):
+        ''' tests the height attr '''
+        self.assertEqual(self.rect.height, 5)
+        with self.assertRaises(TypeError):
+            self.rect.height = '5'
+        with self.assertRaises(ValueError):
+            self.rect.height = 0
+
+    def test_x(self):
+        ''' tests the x attr '''
+        self.assertEqual(self.rect.x, 1)
+        with self.assertRaises(TypeError):
+            self.rect.x = '1'
+        with self.assertRaises(ValueError):
+            self.rect.x = -1
+
+    def test_y(self):
+        ''' tests the attr y '''
+        self.assertEqual(self.rect.y, 2)
+        with self.assertRaises(TypeError):
+            self.rect.y = '2'
+        with self.assertRaises(ValueError):
+            self.rect.y = -2
+
+    def test_area(self):
+        ''' tests the area function '''
+        self.assertEqual(self.rect.area(), 20)
+
+    def test_display(self):
+        '''check that display output matches expected string '''
+        expected_output = "\n\n # # # #\n # # # #\n # # # #\n # # # #\n # # # #\n"
+        self.assertEqual(self.rect.display(), expected_output)
+
+    def test_str(self):
+        ''' tests the magic function __str__ '''
+        expected_output = "[Rectangle] (10) 1/2 - 4/5"
+        self.assertEqual(str(self.rect), expected_output)
+
+    def test_update(self):
+        '''tests the update function '''
+        self.rect.update(20, 6, 7, 3, 4)
+        self.assertEqual(self.rect.id, 20)
+        self.assertEqual(self.rect.width, 6)
+        self.assertEqual(self.rect.height, 7)
+        self.assertEqual(self.rect.x, 3)
+        self.assertEqual(self.rect.y, 4)
+
+    def test_to_dictionary(self):
+        ''' tests the to_dictonary function '''
+        expected_output = {'id': 10, 'width': 4, 'height': 5, 'x': 1, 'y': 2}
+        self.assertEqual(self.rect.to_dictionary(), expected_output)

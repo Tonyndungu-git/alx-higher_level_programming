@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+''' class TestSquare '''
+
+
+class TestSquare(unittest.TestCase):
+    '''unittest for the square class '''
+    def setUp(self):
+        ''' testing the setup of the class '''
+        self.s1 = Square(5, 2, 3, 4)
+        self.s2 = Square(8)
+
+    def test_str(self):
+        ''' testing the magic function __str__'''
+        self.assertEqual(str(self.s1), "[Square] (4) 2/3 - 5")
+        self.assertEqual(str(self.s2), "[Square] (1) 0/0 - 8")
+
+    def test_size(self):
+        ''' testing the size attr'''
+        self.assertEqual(self.s1.size, 5)
+        self.assertEqual(self.s2.size, 8)
+
+    def test_size_setter(self):
+        ''' testing the setter '''
+        with self.assertRaises(TypeError):
+            self.s1.size = '4'
+        with self.assertRaises(ValueError):
+            self.s2.size = -3
+        self.s1.size = 7
+        self.assertEqual(self.s1.size, 7)
+
+    def test_update(self):
+        '''testing the test_update function '''
+        self.s1.update(7, 10)
+        self.assertEqual(str(self.s1), "[Square] (7) 2/3 - 10")
+        self.s2.update(id=2, size=6, y=1)
+        self.assertEqual(str(self.s2), "[Square] (2) 0/1 - 6")
+
+    def test_to_dictionary(self):
+        '''testng the to_dictonary fuction '''
+        self.assertEqual(self.s1.to_dictionary(), {'id': 4, 'size': 5,
+                                                   'x': 2, 'y': 3})
+        self.assertEqual(self.s2.to_dictionary(), {'id': 1, 'size': 8,
+                                                   'x': 0, 'y': 0})
