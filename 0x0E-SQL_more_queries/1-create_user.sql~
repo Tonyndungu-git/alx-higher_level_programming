@@ -1,0 +1,16 @@
+-- Check if the user already exists
+SET @userExists = (SELECT COUNT(*) FROM mysql.user WHERE User = 'user_0d_1');
+
+IF @userExists = 0 THEN
+    -- Create the user with all privileges and set the password
+    CREATE USER 'user_0d_1'@'localhost' IDENTIFIED BY 'new_password';
+    GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
+    FLUSH PRIVILEGES;
+
+    SELECT 'User ''user_0d_1'' created with all privileges and password set.';
+ELSE
+    -- Set the password for an existing user
+    SET PASSWORD FOR 'user_0d_1'@'localhost' = PASSWORD('new_password');
+
+    SELECT 'Password updated for user ''user_0d_1''.';
+END IF;
