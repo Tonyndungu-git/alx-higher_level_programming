@@ -1,0 +1,11 @@
+#!/usr/bin/node
+const args = input.split(" "); // Split the input into an array of arguments
+const numberOfArguments = args.length;
+
+if (numberOfArguments === 0) {
+  console.log("No argument");
+} else if (numberOfArguments === 1) {
+  console.log("Argument found");
+} else {
+  console.log("Arguments found");
+}
