@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-'''connecting to database '''
+''' searching for a certain state in db '''
 
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
-
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    search_name = sys.argv[4]
 
     db = MySQLdb.connect(
         host="localhost",
@@ -21,8 +21,8 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states ORDER BY id ASC"
-    cursor. execute(query)
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor.execute(query, (search_name,))
 
     rows = cursor.fetchall()
 
